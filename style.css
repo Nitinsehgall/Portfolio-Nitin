@@ -157,7 +157,8 @@ flex-wrap: wrap;
 
 
 .card{
-width: 250px;
+width: 150px;
+height: min-content;
 /* height: 40vh; */
 padding: 22px;
         background-color:rgb(36, 36, 36);
@@ -166,8 +167,8 @@ padding: 22px;
         border: 2px solid  rgb(82, 200, 255);
 border-radius: 1rem;
 text-align: center;
-margin-top: 120px;
-margin-bottom: 120px;
+margin-top: 44px;
+margin-bottom: 40px;
 
     }
     .card p{
@@ -177,7 +178,7 @@ margin-bottom: 120px;
 .footer{
     background-color: rgb(36, 36, 36);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     font-size: 20px;
     flex-wrap: wrap;
    
@@ -219,9 +220,7 @@ margin-bottom: 120px;
 
 }
 
-.connect{
-    margin-top: 120px;
-}
+
 .required {
     color: red;
 }
@@ -265,4 +264,9 @@ margin-bottom: 120px;
         
     }
    */
+}
+
+.text p a{
+    color: #fff;
+    text-decoration: none;
 }
