@@ -159,7 +159,7 @@ flex-wrap: wrap;
 .card{
 width: 150px;
 height: min-content;
-/* height: 40vh; */
+height: 150px;
 padding: 22px;
         background-color:rgb(36, 36, 36);
         margin-inline: 22px;
@@ -170,9 +170,11 @@ text-align: center;
 margin-top: 44px;
 margin-bottom: 40px;
 
+
     }
     .card p{
         margin-top: 12px;
+        text-align: center;
     }
 
 .footer{
