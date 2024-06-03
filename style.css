@@ -1,0 +1,336 @@
+*{
+    margin: 0;
+ 
+
+    padding: 0;
+   
+}
+body{
+    background-color: black;
+    color:#fff;
+   
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    background-color: rgb(36, 36, 36);
+    align-items: center;
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    flex-wrap: wrap;
+}
+ul{
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+
+list-style: none;
+
+}
+nav ul li a{
+    text-decoration: none;
+color: aliceblue;
+font-size: 25px;
+margin-inline: 22px;
+
+}
+nav ul li a:hover{
+    color: yellow;
+   
+}
+nav{
+    justify-content: left;
+  
+}
+
+#bar{
+
+    display: none;
+   
+}
+
+.logo{
+    font-size: 22px;
+}
+.logo span{
+    color: rgb(82, 200, 255);
+}
+
+.main
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20vh;
+    flex-wrap: wrap;
+
+}
+
+.mainText h3{
+    font-size: 28px;
+
+}
+.mainText p{
+    font-size: 30px;
+
+}
+.mainText h1{
+    font-size: 70px;
+
+}
+.mainText h1 span{
+    color:rgb(82, 200, 255);
+
+}
+.img1{
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    height: 80vh;
+ 
+}
+
+.mainText button{
+    width: 140px;
+    height: 40px;
+    background-color: rgb(82, 200, 255);
+    font-size: 19px;
+    border: none;
+    margin-top: 24px;
+    color:black;
+    border-radius: 1rem;
+    cursor: pointer;
+  
+}
+.mainText button:hover{
+    background-color:yellow;
+    color: black; 
+    border: 2px solid white;
+}
+
+.head{
+    text-align: center;
+    margin-top: 20px;
+}
+.head span{
+    color : rgb(82, 200, 255);
+}
+
+.aboutus{
+    padding:15px;
+
+
+}
+.about{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(36, 36, 36);
+  padding: 32px;
+  font-size: 25px;
+flex-wrap: wrap;
+  
+}
+.aboutText p{
+    margin:30px 0px ;
+    /* color: #fff; */
+}
+.aboutText p span{
+    color: rgb(255, 255, 195);
+}
+.Developer{
+    
+    color:  rgb(82, 200, 255);
+}
+
+
+.about img{
+    /* width: 2500px; */
+    height: 73vh;
+    border-radius: 50%;
+    border: 4px solid  rgb(82, 200, 255);
+}
+
+
+
+
+
+.services{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.card{
+width: 150px;
+height: min-content;
+height: 150px;
+padding: 22px;
+        background-color:rgb(36, 36, 36);
+        margin-inline: 22px;
+        padding: 10vh;
+        border: 2px solid  rgb(82, 200, 255);
+border-radius: 1rem;
+text-align: center;
+margin-top: 44px;
+margin-bottom: 40px;
+
+
+    }
+    .card p{
+        margin-top: 12px;
+        text-align: center;
+    }
+
+.footer{
+    background-color: rgb(36, 36, 36);
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    flex-wrap: wrap;
+   
+    align-items: center;
+    /* margin-inline: 20px; */
+    padding: 40px;
+  padding-top: 50px;
+}
+
+.text p{
+  margin: 20px;
+}
+.footer1 p{
+    text-align: center;
+    padding: 5px;
+    background-color: rgb(36, 36, 36);
+}
+
+.contact{
+    width: 300px;
+    padding: 20px;
+  
+    margin: auto;
+}
+.contact input{
+    width: 90%;
+    padding: 5px;
+    font-size: 17px;
+    border: 1 px solid yellow;
+    background-color: transparent;
+    color: white;
+    margin-top: 3px;
+
+}
+
+.contact p{
+    margin-top: 20px;
+    font-size: 20px;
+
+}
+
+
+.required {
+    color: red;
+}
+
+.text h3{
+    text-align: center;
+}
+#Submit{
+    width: 140px;
+    height: 40px;
+    background-color: rgb(82, 200, 255);
+    font-size: 19px;
+    border: none;
+    margin-top: 24px;
+    color:black;
+    border-radius: 1rem;
+    cursor: pointer;
+    margin-bottom: 50px;
+
+}
+.Submit:hover{
+    background-color:yellow;
+    color: black; 
+    border: 2px solid white;
+}
+.text p a{
+    color: #fff;
+    text-decoration: none;
+}
+
+@media screen and (max-width:1000px){
+    .main{
+        display: block;
+        text-align: center;
+        margin-top: 155px;
+  
+    }
+ 
+}
+@media screen and (max-width:800px){
+    ul{
+        display: none;
+    }
+    #bar{
+        /* display: none; */
+        display: block;
+        font-size: 25px;
+        cursor: pointer;
+      
+    } 
+
+    .showData{
+    display: flex;
+flex-direction: column;
+justify-content: center;
+padding: 23px;
+gap: 23px;
+}
+
+
+
+
+
+}
+@media screen and (max-width:550px){
+   
+ .mainText h1{
+    font-size: 36px;
+ }
+ .mainText h3{
+    font-size: 36px;
+ }
+ .mainText p{
+    font-size: 20px;
+ }
+ .main img{
+width: 90%;
+height: 400px;
+ }
+ .about .img1{
+    width: 300px;
+    height: 300px;
+   
+ }
+ .services{
+    justify-content: center;
+ }
+.card h3{
+   font-size: 30px;
+}
+ .aboutText{
+    justify-content: center;
+    align-items: center;
+ }
+ .card p{
+    font-size: 20px;
+ }
+ .contact{
+    width: 80%;
+ }
+}
