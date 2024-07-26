@@ -4,6 +4,8 @@ let bar=document.querySelector("#bar");
 
 cvbtn.addEventListener("click",Click=()=>{
     alert("Download Successfully")
+window.open('https://drive.google.com/file/d/10z1Mdatc-mV-M2XmDc2PTJbZrDC-AUY8/view?usp=sharing',"_blank")
+
 })
 
 
