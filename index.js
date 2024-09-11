@@ -3,7 +3,7 @@ let submit=document.querySelector("#Submit");
 let bar=document.querySelector("#bar");
 
 cvbtn.addEventListener("click",Click=()=>{
-window.open('https://drive.google.com/file/d/10z1Mdatc-mV-M2XmDc2PTJbZrDC-AUY8/view?usp=sharing',"_blank")
+window.open('https://drive.google.com/file/d/1eVLhQLkloBLMfVJRXll9U0g4XVgDcC9I/view?usp=drive_link',"_blank")
 
 })
 
@@ -33,3 +33,6 @@ bar.addEventListener("click",Click=()=>{
 
         }
     })
+
+  const showData=document.querySelector('.showDAta');
+  console.log(showData);
