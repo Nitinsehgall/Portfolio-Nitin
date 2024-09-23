@@ -4,6 +4,7 @@
 scroll-behavior: smooth;
     padding: 0;
    
+   
 }
 
 body{
@@ -56,6 +57,9 @@ nav{
 
 .logo{
     font-size: 22px;
+}
+.Logo h1{
+    color: orange;
 }
 .logo span{
     color: rgb(82, 200, 255);
@@ -128,6 +132,7 @@ nav{
 .about{
   display: flex;
   justify-content: space-around;
+
   align-items: center;
   background-color: rgb(36, 36, 36);
   padding: 32px;
@@ -327,15 +332,33 @@ height: 400px;
  .aboutText{
     justify-content: center;
     align-items: center;
+    display: flex;
+flex-wrap: wrap;
  }
  .card p{
-    font-size: 20px;
+    /* font-size: 20px; */
  }
  .contact{
     width: 80%;
  }
+
+ .aboutText p{
+    font-size: large;
+ }
+ .text{
+    font-size: large;
+    width: 100%;
+ }
+
 }
 img{
     object-fit: contain;
 
+}
+
+.text h3{
+    color:orange;
+}
+.text p a:hover{
+    color: yellow;
 }
