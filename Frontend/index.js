@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     try {
         const response = await fetch(
-            "http://localhost:5000/api/contact",
+            "https://portfolio-nitin.onrender.com/api/contact",
             {
                 method: "POST",
                 headers: {
