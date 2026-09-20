@@ -1,9 +1,13 @@
+
 const express = require("express");
 const cors = require("cors");
-const nodemailer = require("nodemailer");
+const { Resend } = require("resend");
 require("dotenv").config();
 
 const app = express();
+
+// Initialize Resend
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Middleware
 app.use(cors());
@@ -27,31 +31,33 @@ app.post("/api/contact", async (req, res) => {
             });
         }
 
-        // Create email transporter
-        const transporter = nodemailer.createTransport({
-            service: "gmail",
-            auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASS
-            }
-        });
-
-        // Email to you
-        await transporter.sendMail({
-            from: process.env.EMAIL_USER,
-            to: process.env.EMAIL_USER,
+        // Send email using Resend API
+        const { data, error } = await resend.emails.send({
+            from: "Portfolio <onboarding@resend.dev>",
+            to: [process.env.CONTACT_EMAIL],
             replyTo: email,
             subject: "New Contact Form Message",
             text: `
-                New message from your portfolio website
+                    New message from your portfolio website
 
-                Visitor Email:
-                ${email}
+                    Visitor Email:
+                    ${email}
 
-                Message:
-                ${message}
+                    Message:
+                    ${message}
             `
         });
+
+        if (error) {
+            console.error("Resend email error:", error);
+
+            return res.status(500).json({
+                success: false,
+                message: "Failed to send message."
+            });
+        }
+
+        console.log("Email sent successfully:", data.id);
 
         res.status(200).json({
             success: true,
@@ -59,7 +65,7 @@ app.post("/api/contact", async (req, res) => {
         });
 
     } catch (error) {
-        console.error("Email error:", error);
+        console.error("Server error:", error);
 
         res.status(500).json({
             success: false,
@@ -68,7 +74,7 @@ app.post("/api/contact", async (req, res) => {
     }
 });
 
-// Render provides PORT through environment variables
+// Render provides PORT
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
