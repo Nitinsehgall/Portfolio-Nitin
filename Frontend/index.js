@@ -97,6 +97,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  function triggerForm(){
+    document.querySelector('#Email').focus();
+    document.querySelector('.showTextForContact').innerText='Please fill out the required details in the Form to view Contact.'
+    setTimeout((e)=>{
+      document.querySelector('.showTextForContact').innerText='*'
+    },6000)
+  }
+  document.querySelector("#showContact").addEventListener("click", triggerForm);
   // Contact Form Handling & Validation
   if (contactForm)contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -112,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
+    let formSent=false
     try {
         const response = await fetch(
             "https://portfolio-nitin.onrender.com/api/contact",
@@ -134,7 +143,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         alert("Thank you for your message, Nitin will get back to you shortly!");
-
+        formSent=true
+        document.querySelector("#showContact").innerText='+91 9068054660';
+        document.querySelector("#showContact").href=`tel:+919068054660`;
         contactForm.reset();
 
     } catch (error) {

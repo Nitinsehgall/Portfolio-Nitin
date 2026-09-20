@@ -1123,3 +1123,19 @@ footer.main-footer {
   opacity: 1;
   transform: translateY(0);
 }
+
+@media screen and (max-width: 530px) {
+  .info-card{
+    padding: 10px;
+    gap: unset;
+    justify-content: space-between;
+  }
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+}
+.contact-wrapper{
+  padding: 10px;
+}
+}
+  
