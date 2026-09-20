@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll(".nav-menu li a");
   const navbarHeader = document.querySelector(".navbar-wrapper");
   const revealElements = document.querySelectorAll(".reveal");
-
+  let contact = '+91 9068054660';
   // CV Download Button Action
   if (cvBtn) {
     cvBtn.addEventListener("click", () => {
@@ -97,16 +97,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  function triggerForm(){
+  function triggerForm() {
+    if (document.querySelector("#showContact").innerText == `${contact}`) return;
     document.querySelector('#Email').focus();
-    document.querySelector('.showTextForContact').innerText='Please fill out the required details in the Form to view Contact.'
-    setTimeout((e)=>{
-      document.querySelector('.showTextForContact').innerText='*'
-    },6000)
+    document.querySelector('.showTextForContact').innerText = 'Please fill out the required details in the Form to view Contact.'
+    setTimeout((e) => {
+      document.querySelector('.showTextForContact').innerText = '*'
+    }, 3000)
   }
   document.querySelector("#showContact").addEventListener("click", triggerForm);
   // Contact Form Handling & Validation
-  if (contactForm)contactForm.addEventListener("submit", async (e) => {
+  if (contactForm) contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const emailInput = document.querySelector("#Email");
@@ -116,42 +117,40 @@ document.addEventListener('DOMContentLoaded', () => {
     const message = messageInput.value.trim();
 
     if (!email || !message) {
-        alert("Please fill in all required fields (*).");
-        return;
+      alert("Please fill in all required fields (*).");
+      return;
     }
-
-    let formSent=false
     try {
-        const response = await fetch(
-            "https://portfolio-nitin.onrender.com/api/contact",
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    email,
-                    message
-                })
-            }
-        );
-
-        const data = await response.json();
-
-        if (!response.ok) {
-            throw new Error(data.message);
+      const response = await fetch(
+        "https://portfolio-nitin.onrender.com/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            email,
+            message
+          })
         }
+      );
 
-        alert("Thank you for your message, Nitin will get back to you shortly!");
-        formSent=true
-        document.querySelector("#showContact").innerText='+91 9068054660';
-        document.querySelector("#showContact").href=`tel:+919068054660`;
-        contactForm.reset();
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message);
+      }
+
+      alert("Thank you for your message, Nitin will get back to you shortly!");
+      formSent = true
+      document.querySelector("#showContact").innerText = `${contact}`;
+      document.querySelector("#showContact").href = `tel:${contact}`;
+      contactForm.reset();
 
     } catch (error) {
-        console.error(error);
+      console.error(error);
 
-        alert("Unable to send your message. Please try again.");
+      alert("Unable to send your message. Please try again.");
     }
-});
+  });
 });
