@@ -1137,5 +1137,8 @@ footer.main-footer {
 .contact-wrapper{
   padding: 10px;
 }
+.projects-grid{
+  grid-template-columns: unset;
+}
 }
   
